@@ -10,4 +10,20 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Source virtualenv
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Dev
+source /usr/local/bin/virtualenvwrapper.sh      
+
+# Alias
+
+alias zpreztorc='vim ~/.zpreztorc'
+alias zshrc='vim ~/.zshrc'
+
+alias tma='tmux attach -d -t'
+alias tmn='tmux new -s $(basename $(pwd))'
+alias tml='tmux list-sessions'
+
+alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
