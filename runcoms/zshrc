@@ -5,10 +5,29 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Powerlevel9k Font Mode
+POWERLEVEL9K_MODE='nerdfont-complete'
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# fasd
+eval "$(fasd --init auto)"
+
+# Not running interactively then bail
+[[ $- != *i* ]] && return
+
+# Shell opts
+setopt auto_cd
+setopt bang_hist
+setopt completealiases
+setopt extended_history
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+setopt inc_append_history
+setopt share_history
 
 # Source virtualenv
 
@@ -20,6 +39,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 alias zpreztorc='vim ~/.zpreztorc'
 alias zshrc='vim ~/.zshrc'
+alias i3rc='vim ~/.config/i3/config'
+alias vimrc='vim ~/.vimrc'
 
 alias tma='tmux attach -d -t'
 alias tmn='tmux new -s $(basename $(pwd))'
@@ -27,3 +48,7 @@ alias tml='tmux list-sessions'
 
 alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# Tab completion for colorls
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+al-info
