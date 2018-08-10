@@ -8,6 +8,8 @@
 # Powerlevel9k Font Mode
 POWERLEVEL9K_MODE='nerdfont-complete'
 
+# Powerlevel9k Prompt Segments
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable virtualenv vcs)
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
