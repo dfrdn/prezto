@@ -50,6 +50,8 @@ alias tml='tmux list-sessions'
 
 alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+alias b="WD=\$(pwd);cd ~/Books;zathura \"\$(fzf)\" &;cd \$WD"
+
 # Tab completion for colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
 
