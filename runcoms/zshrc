@@ -54,7 +54,10 @@ alias b="WD=\$(pwd);cd ~/Books;zathura \"\$(fzf)\" &;cd \$WD"
 
 alias ls=ls_extended
 
+# Default browser
+export BROWSER=/usr/bin/qutebrowser
+
 # Tab completion for colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
+# source $(dirname $(gem which colorls))/tab_complete.sh
 
 al-info
